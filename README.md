@@ -8,3 +8,10 @@ A repo containing scripts / steps on wetting up a new Windows developer environm
 - Install Chocolatey and Boxstarter
 - Run the boxstarter scripts in this repo.
 
+To run the boxstart script, see the details (here)[https://boxstarter.org/weblauncher#step-3].
+
+Command will be something like
+
+```bash
+START https://boxstarter.org/package/nr/url?https://github.com/bcraig83/WindowsSetup/blob/main/InitialSetup.txt
+```
