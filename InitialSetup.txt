@@ -7,19 +7,6 @@ Write-BoxstarterMessage "Beginning initial setup"
 $Boxstarter.RebootOk=$true # Allow reboots?
 $Boxstarter.AutoLogin=$true # Save my password securely and auto-login after a reboot
 
-#########################################
-# Set Execution Policy and Disable UAC 	#
-#########################################
-Write-BoxstarterMessage "Set Execution Policy and Disable UAC"
-Set-ExecutionPolicy Unrestricted
-Disable-UAC
-
-###############################################
-# Install Windows Update
-###############################################
-Write-BoxstarterMessage "Installing Windows Update..."
-Install-WindowsUpdate -AcceptEula
-
 ###############################################
 #--- Rename the Computer ---
 ###############################################
@@ -173,67 +160,6 @@ Get-AppxPackage Microsoft.XboxIdentityProvider | Remove-AppxPackage
 # Zune Music, Movies & TV
 Get-AppxPackage Microsoft.ZuneMusic | Remove-AppxPackage
 Get-AppxPackage Microsoft.ZuneVideo | Remove-AppxPackage
-
-###############################################
-# Set Taskbar and Explorer preferences
-###############################################
-Write-BoxstarterMessage "Setting taskbar and explorer preferences..."
-Set-BoxstarterTaskbarOptions -Size Small -Dock Left -Combine Always -AlwaysShowIconsOn -MultiMonitorOn -MultiMonitorMode All -MultiMonitorCombine Always -EnableSearchBox
-Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableExpandToOpenFolder -EnableShowRibbon -EnableItemCheckBoxDisable-GameBarTips
-Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name LaunchTo -Type DWord -Value 1
-# Better File Explorer
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneExpandToCurrentFolder -Value 1
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name NavPaneShowAllFolders -Value 1
-Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name MMTaskbarMode -Value 2
-
-###############################################
-# Adjust library folders
-###############################################
-Write-BoxstarterMessage "Adjusting library folders..."
-Move-LibraryDirectory "Desktop" "D:\Desktop"
-Move-LibraryDirectory "Documents" "D:\Documents"
-Move-LibraryDirectory "Downloads" "D:\Downloads"
-Move-LibraryDirectory "Music" "D:\Music"
-Move-LibraryDirectory "Pictures" "D:\Pictures"
-Move-LibraryDirectory "Videos" "D:\Videos"
-
-###############################################
-# Install software
-###############################################
-Write-BoxstarterMessage "Installing software..."
-
-cinst 7zip -y
-cinst ditto -y
-cinst docker-cli -y
-cinst docker-engine -y
-cinst dotnetcore -y
-cinst evernote -y
-cinst fork -y
-cinst git -y
-cinst googlechrome -y
-cinst greenshot -y
-cinst jetbrainstoolbox -y
-cinst nordpass -y
-cinst oracle17jdk -y
-cinst postman -y
-cinst powertoys -y
-cinst spotify -y
-cinst steam -y
-cinst tabby -y
-cinst teamviewer -y
-cinst vscode -y
-cinst windirstat -y
-cinst xmind -y
-cinst zoom -y
-
-###############################################
-# Cleanup
-###############################################
-Write-BoxstarterMessage "Cleanint up..."
-del C:\eula*.txt
-del C:\install.*
-del C:\vcredist.*
-del C:\vc_red.*
 
 ###############################################
 # Restart if required

@@ -1,0 +1,29 @@
+
+###############################################
+# Install software
+###############################################
+Write-BoxstarterMessage "Installing software..."
+
+cinst 7zip -y
+cinst ditto -y
+#cinst docker-cli -y
+#cinst docker-engine -y
+#cinst dotnetcore -y
+cinst evernote -y
+cinst fork -y
+cinst git -y
+cinst googlechrome -y
+#cinst greenshot -y
+cinst jetbrainstoolbox -y
+cinst nordpass -y
+#cinst oracle17jdk -y
+#cinst postman -y
+cinst powertoys -y
+cinst spotify -y
+cinst steam -y
+cinst tabby -y
+#cinst teamviewer -y
+cinst vscode -y
+cinst windirstat -y
+#cinst xmind -y
+#cinst zoom -y

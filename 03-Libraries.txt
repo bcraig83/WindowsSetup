@@ -1,0 +1,10 @@
+###############################################
+# Adjust library folders
+###############################################
+Write-BoxstarterMessage "Adjusting library folders..."
+Move-LibraryDirectory "Desktop" "D:\Desktop"
+Move-LibraryDirectory "Documents" "D:\Documents"
+Move-LibraryDirectory "Downloads" "D:\Downloads"
+Move-LibraryDirectory "Music" "D:\Music"
+Move-LibraryDirectory "Pictures" "D:\Pictures"
+Move-LibraryDirectory "Videos" "D:\Videos"

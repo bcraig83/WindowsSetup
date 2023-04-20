@@ -1,0 +1,12 @@
+#########################################
+# Set Execution Policy and Disable UAC 	#
+#########################################
+Write-BoxstarterMessage "Set Execution Policy and Disable UAC"
+Set-ExecutionPolicy Unrestricted
+Disable-UAC
+
+###############################################
+# Install Windows Update
+###############################################
+Write-BoxstarterMessage "Installing Windows Update..."
+Install-WindowsUpdate -AcceptEula
